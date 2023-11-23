@@ -1,5 +1,6 @@
 import React from 'react'
 import './globals.css'
+import { Product, Footer, HeroBanner} from '../../components/index'
 
 const home = () => {
   return (
