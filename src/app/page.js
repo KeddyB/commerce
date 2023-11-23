@@ -11,7 +11,7 @@ const home = () => {
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {['Product 1','Product 2','Product 3'].map((product) => product)}
+        {['Product 1',' Product 2'].map((product) => product)}
       </div>
 
       Footer
