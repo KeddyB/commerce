@@ -5,7 +5,7 @@ import { Product, Footer, HeroBanner} from '../../components/index'
 const home = () => {
   return (
     <>
-      Hero banner
+      <HeroBanner />
       
       <div className='products-heading'>
         <h2>Best selling products</h2>
@@ -15,7 +15,7 @@ const home = () => {
         {['Product 1',' Product 2'].map((product) => product)}
       </div>
 
-      Footer
+      <Footer />
     </>
   )
 }
