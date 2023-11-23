@@ -16,8 +16,8 @@ export default{
             title: 'Name',
             type: 'string'
         },{
-            name: slug,
-            title: Slug,
+            name: 'slug',
+            title: 'Slug',
             type: 'slug',
             options:{
                 source: 'name',
@@ -28,8 +28,8 @@ export default{
             title: 'Price',
             type: 'number'
         },{
-            name: details,
-            title: Details,
+            name: 'details',
+            title: 'Details',
             type: 'string'
         }
     ]
