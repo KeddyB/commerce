@@ -1,9 +1,15 @@
 import React from 'react'
 
-const page = () => {
+const home = () => {
   return (
-    <div>page</div>
+    <>
+      Hero banner
+      <div>
+        <h2>Best selling products</h2>
+        <p>speakers of many variation</p>
+      </div>
+    </>
   )
 }
 
-export default page
+export default home
