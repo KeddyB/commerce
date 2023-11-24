@@ -1,8 +1,9 @@
 import React from 'react'
 import './globals.css'
 import { Product, Footer, HeroBanner} from '../../components/index'
+import { client } from '../../lib/client'
 
-const home = () => {
+const home = ({ products, bannerData}) => {
   return (
     <div>
       <HeroBanner />
@@ -12,7 +13,7 @@ const home = () => {
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {['Product 1',' Product 2'].map((product) => product)}
+        {products?.map((product) => product)}
       </div>
 
       <Footer />
@@ -20,4 +21,15 @@ const home = () => {
   )
 }
 
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]'
+  const products = await client.fetch(query)
+
+  const bannerQuery = '*[_type == "banner"]'
+  const bannerData = await client.fetch(bannerQuery)
+}
+
+return {
+  props: { products, bannerData }
+}
 export default home
