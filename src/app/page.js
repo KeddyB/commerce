@@ -4,7 +4,7 @@ import { Product, Footer, HeroBanner} from '../../components/index'
 
 const home = () => {
   return (
-    <>
+    <div>
       <HeroBanner />
       
       <div className='products-heading'>
@@ -16,7 +16,7 @@ const home = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   )
 }
 
