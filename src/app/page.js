@@ -13,7 +13,7 @@ const home = ({ products, bannerData}) => {
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {products?.map((product) => product)}
+        {['product 1', 'products 2'].map((product) => product.name)}
       </div>
 
       <Footer />
@@ -21,15 +21,16 @@ const home = ({ products, bannerData}) => {
   )
 }
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]'
-  const products = await client.fetch(query)
+// export const getServerSideProps = async () => {
+//   const query = '*[_type == "product"]'
+//   const products = await client.fetch(query)
 
-  const bannerQuery = '*[_type == "banner"]'
-  const bannerData = await client.fetch(bannerQuery)
-}
+//   const bannerQuery = '*[_type == "banner"]'
+//   const bannerData = await client.fetch(bannerQuery)
 
-return {
-  props: { products, bannerData }
-}
+//   return {
+//     props: { products, bannerData }
+//   }
+// }
+
 export default home
