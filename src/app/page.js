@@ -8,7 +8,7 @@ export const home = async ({ products, bannerData}) => {
   
   return (
     <div>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <HeroBanner /* heroBanner={bannerData.length && bannerData[0]} */ />
       <div className='products-heading'>
         <h2>Best selling products</h2>
         <p>speakers of many variation</p>
@@ -30,12 +30,10 @@ export const fetchData = async () => {
   const bannerData = await sanityClient.fetch(bannerQuery)
 
   // if (!products.ok || !bannerData.ok){
-  //   throw new Error('failed to fetch data')
+  //   throw new Error('Failed to fetch data')
   // }
 
-  return {
-    props: {products, bannerData}
-  }
+  return {products, bannerData}
 }
 
 export default home
