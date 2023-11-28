@@ -3,24 +3,6 @@ import './globals.css'
 import { Product, Footer, HeroBanner} from '../../components/index'
 import { sanityClient } from '../../lib/client'
 
-export const home = async ({ products, bannerData}) => {
-  const data = await fetchData()
-  
-  return (
-    <div>
-      <HeroBanner /* heroBanner={bannerData.length && bannerData[0]} */ />
-      <div className='products-heading'>
-        <h2>Best selling products</h2>
-        <p>speakers of many variation</p>
-      </div>
-      <div className='products-container'>
-        {products?.map((product) => product.name)}
-      </div>
-
-      <Footer />
-    </div>
-  )
-}
 
 export const fetchData = async () => {
   const query = '*[_type == "product"]'
@@ -36,4 +18,22 @@ export const fetchData = async () => {
   return {products, bannerData}
 }
 
-export default home
+export default async function home ({ products, bannerData}) {
+  const data = await fetchData()
+  
+  return (
+    <div>
+      <HeroBanner /*heroBanner={bannerData.length && bannerData[0]}*/ />
+      {console.log(bannerData)} 
+      <div className='products-heading'>
+        <h2>Best selling products</h2>
+        <p>speakers of many variation</p>
+      </div>
+      <div className='products-container'>
+        {products?.map((product) => product.name)}
+      </div>
+
+      <Footer />
+    </div>
+  )
+}
