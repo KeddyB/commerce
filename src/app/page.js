@@ -4,19 +4,20 @@ import { Product, Footer, HeroBanner} from '../../components/index'
 import { client } from '../../lib/client'
 import { groq } from "next-sanity"
 
-export const home = async ({products, bannerData}) => {
-  const data = await fetchData()
+export const home = async () => {
+  const data = await fetchProduct()
+  const bdata = await fetchBanner()
   
   return (
     <div>
-      <HeroBanner /* heroBanner={bannerData?.length && bannerData[0]}*/ />
+      <HeroBanner heroBanner={bdata.length && bdata[0]} />
       
       <div className='products-heading'>
         <h2>Best selling products</h2>
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {products?.map((product) => product.name)}
+        {data?.map((product) => product.name)}
       </div>
 
       <Footer />
@@ -24,28 +25,16 @@ export const home = async ({products, bannerData}) => {
   )
 }
 
-export const fetchData = async () => {
-  const query = groq`*[_type == "product"]`
-  const products = await client.fetch(query)
+export const fetchProduct = async () => {
+  const query = client.fetch(groq`*[_type == "product"]`)
 
-  const bannerQuery = groq`*[_type == "banner"]`
-  const bannerData = await client.fetch(bannerQuery)
+  return query
+}
 
-  // if (!products.ok || !bannerData.ok){
-  //   throw new Error('Failed to fetch data')
-  // }
+export const fetchBanner = async () => {
+  const bquery = client.fetch(groq`*[_type == "banner"]`)
 
-  return {
-    props:{products, bannerData}
-  }
-//   const query = client.fetch(groq`
-//   {
-//     'products': *[_type == "product"],
-//     'bannerData': ['*[_type == "banner"]'
-//   }
-// `)
-
-//   return query
+  return bquery
 }
 
 export default home
