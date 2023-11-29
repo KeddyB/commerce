@@ -18,7 +18,7 @@ export const home = async () => {
       </div>
       <div className='products-container'>
         {data?.map((product) => <Product
-          key={product._id}
+          key={product._id} product={product}
         />)}
       </div>
 
