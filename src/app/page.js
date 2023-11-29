@@ -28,14 +28,12 @@ export const home = async () => {
 }
 
 export const fetchProduct = async () => {
-  const query = client.fetch(groq`*[_type == "product"]`)
-
+  const query = client.fetch(`*[_type == "product"]`)
   return query
 }
 
 export const fetchBanner = async () => {
-  const bquery = client.fetch(groq`*[_type == "banner"]`)
-
+  const bquery = client.fetch(`*[_type == "banner"]`)
   return bquery
 }
 
