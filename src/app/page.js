@@ -6,18 +6,20 @@ import { groq } from "next-sanity"
 
 export const home = async () => {
   const data = await fetchProduct()
-  const bdata = await fetchBanner()
+  const bData = await fetchBanner()
   
   return (
     <div>
-      <HeroBanner heroBanner={bdata.length && bdata[0]} />
+      <HeroBanner heroBanner={bData.length && bData[0]} />
       
       <div className='products-heading'>
         <h2>Best selling products</h2>
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {data?.map((product) => product.name)}
+        {data?.map((product) => <Product
+          key={product._id}
+        />)}
       </div>
 
       <Footer />
