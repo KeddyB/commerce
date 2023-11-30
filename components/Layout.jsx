@@ -1,9 +1,22 @@
 import React from 'react'
+import Head from 'next/head'
+
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 const Layout = () => {
   return (
-    <div>
-      
+    <div className='layout'>
+      <Head>
+        <title>Keddy Store</title>
+      </Head>
+      <header>
+        <Navbar />
+      </header>
+      <main className='main-container'>empty</main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
