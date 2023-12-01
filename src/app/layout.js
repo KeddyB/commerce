@@ -13,17 +13,15 @@ export default function Layout({ children }) {
  return (
     <html lang="en">
       <body>
-      <div className='layout'>
-      <Head>
-        <title>Keddy Store</title>
-      </Head>
-      <header>
-        <Navbar />
-      </header>
-      <main className='main-container'>{children}</main>
-      <footer>
-      </footer>
-    </div>  
+        <div className='layout'>
+          <Head>
+            <title>Keddy Store</title>
+          </Head>
+          <header>
+            <Navbar />
+          </header>
+        <main className='main-container'>{children}</main>
+        </div>  
       </body>
     </html>
   )
