@@ -1,8 +1,7 @@
 import '../app/globals.css'
 import Head from 'next/head'
 
-import { Navbar } from '../../components'
-import Footer from '../../components'
+import { Navbar, Footer } from '../../components'
 
 export const metadata = {
   title: 'Keddy Shop',
@@ -21,9 +20,9 @@ export default function Layout({ children }) {
             <Navbar />
           </header>
           <main className='main-container'>{children}</main>
-          <Footer>
+          <footer>
             <Footer />
-          </Footer>
+          </footer>
         </div>
       </body>
     </html>
