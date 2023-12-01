@@ -1,15 +1,66 @@
 import React from 'react'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  //const currentYear = new Date().getFullYear();
+  let date = new Date()
+  let day = date.getDate();
+  let month = date.getMonth()+1;
+  let year = date.getFullYear();
+
+  console.log(Month())
+
+  function Month(){
+    if(month == 1){
+      let month = "Jan"
+    }
+    else if(month == 2){
+      return "Feb"
+    }
+    else if(month == 3){
+      return "Mar"
+    }
+    else if(month == 4){
+      return "Apr"
+    }
+    else if(month == 5){
+      return "May"
+    }
+    else if(month == 6){
+      return "June"
+    }
+    else if(month == 7){
+      return "July"
+    }
+    else if(month == 8){
+      return "Aug"
+    }
+    else if(month == 9){
+      return "Sept"
+    }
+    else if(month == 10){
+      return "Oct"
+    }
+    else if(month == 11){
+      return "Nov"
+    }
+    else if(month == 12){
+      return "Dec"
+    }
+  }
+
+  let fDate = `${Month()}, ${year}`;
   return (
     <div className='footer-container'>
-      <p> &copy; <Link href="/">KEDDY STORE</Link> | All Rights Reserved {currentYear} </p>
+      <p> &copy; {fDate} <Link href="/">KEDDY STORE</Link> | All Rights Reserved</p>
       <p className='icons'>
-        <AiFillInstagram />
-        <AiOutlineTwitter style = {{color: 'skyblue'}} />
+        <AiFillInstagram style={{color: "#BD26FF"}}/>
+        <AiOutlineTwitter style={{color: "skyblue"}}/>
+        <FontAwesomeIcon icon="fa-brands fa-instagram" />
+        <FontAwesomeIcon icon="fa-brands fa-x-twitter" />
       </p>
     </div>
   )
