@@ -4,6 +4,9 @@ import { Product, FooterBanner, HeroBanner} from '../../components/index'
 import { client } from '../../lib/client'
 import { groq } from "next-sanity"
 
+import Layout from './layout'
+
+
 export const home = async () => {
   const data = await fetchProduct()
   const bData = await fetchBanner()
