@@ -10,7 +10,7 @@ const Navbar = () => {
       </p>
       <button type='button' className='cart-icon' onClick="">
         <span className='cart-item-qty'>9</span>
-        <AiOutlineShopping style ={{color: "black"}} />
+        <AiOutlineShopping style={{color: "black"}} />
         
       </button>
     </div>
