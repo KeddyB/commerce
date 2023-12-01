@@ -20,8 +20,11 @@ export default function Layout({ children }) {
           <header>
             <Navbar />
           </header>
-        <main className='main-container'>{children}</main>
-        </div>  
+          <main className='main-container'>{children}</main>
+          <Footer>
+            <Footer />
+          </Footer>
+        </div>
       </body>
     </html>
   )

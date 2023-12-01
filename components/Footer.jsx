@@ -3,8 +3,8 @@ import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
 const Footer = () => {
   return (
-    <div>
-      this is a Footer
+    <div className='footer-container'>
+      <p> &copy; Keddy Stores | All Rights Reserved 2023 </p>
     </div>
   )
 }
