@@ -6,11 +6,11 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <p className='logo'>
-        <Link href="/">Keddy Store</Link>
+        <Link href="/">KEDDY STORE</Link>
       </p>
       <button type='button' className='cart-icon' onClick="">
         <span className='cart-item-qty'>9</span>
-        <AiOutlineShopping />
+        <AiOutlineShopping style ={{color: "black"}} />
         
       </button>
     </div>

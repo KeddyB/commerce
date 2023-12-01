@@ -1,10 +1,12 @@
 import React from 'react'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
+import Link from 'next/link';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className='footer-container'>
-      <p> &copy; Keddy Stores | All Rights Reserved 2023 </p>
+      <p> &copy; <Link href="/">KEDDY STORE</Link> | All Rights Reserved {currentYear} </p>
       <p className='icons'>
         <AiFillInstagram />
         <AiOutlineTwitter style = {{color: 'skyblue'}} />
