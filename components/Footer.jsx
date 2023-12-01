@@ -57,8 +57,8 @@ const Footer = () => {
     <div className='footer-container'>
       <p> &copy; {fDate} <Link href="/">KEDDY STORE</Link> | All Rights Reserved</p>
       <p className='icons'>
-        <AiFillInstagram style={{color: "gray"}}/>
-        <AiOutlineTwitter style={{color: "gray"}}/>
+        <AiFillInstagram style={{color: "#DD2A7B"}}/>
+        <AiOutlineTwitter style={{color: "skyblue"}}/>
         <FontAwesomeIcon icon="fa-brands fa-instagram" />
         <FontAwesomeIcon icon="fa-brands fa-x-twitter" />
       </p>
