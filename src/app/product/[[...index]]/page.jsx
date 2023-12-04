@@ -1,23 +1,28 @@
-'use client'
+import React from "react"
+import { client, urlFor } from "../../../../lib/client"
 
-/**
- * This route is responsible for the built-in authoring environment using Sanity Studio.
- * All routes under your studio path is handled by this file using Next.js' catch-all routes:
- * https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes
- *
- * You can learn more about the next-sanity package here:
- * https://github.com/sanity-io/next-sanity
- */
-
-import config from '../../../../backend/sanity.config.js'
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-
-export default function StudioPage() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
+export default async function ProductDetails() {
+  const data = await fetchProduct()
 
   return(
-    <div>this is the studio page</div>
+    <div>
+      <div className="product-detail-container">
+        <div>
+          <div className="image-container">
+            <img src='' />
+          </div>
+        </div>
+      </div>
+    </div>
   )
+
+}
+
+export const fetchProduct = async ({params: { slug }}) => {
+  const query = client.fetch(`*[_type == "product"]`)
+
+  const bquery = client.fetch(`*[_type == "banner"]`)
+  return {props:{
+    query, bquery
+  }}
 }
