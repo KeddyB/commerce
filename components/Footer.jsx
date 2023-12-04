@@ -9,8 +9,6 @@ const Footer = () => {
   let month = date.getMonth()+1;
   let year = date.getFullYear();
 
-  console.log(Month())
-
   function Month(){
     if(month == 1){
       return "Jan"
