@@ -2,7 +2,6 @@ import React from 'react'
 import './globals.css'
 import { Product, FooterBanner, HeroBanner} from '../../components/index'
 import { client } from '../../lib/client'
-import { groq } from "next-sanity"
 
 import Layout from './layout'
 

@@ -1,8 +1,6 @@
 import React from 'react'
 import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Footer = () => {
   //const currentYear = new Date().getFullYear();
@@ -15,7 +13,7 @@ const Footer = () => {
 
   function Month(){
     if(month == 1){
-      let month = "Jan"
+      return "Jan"
     }
     else if(month == 2){
       return "Feb"
@@ -59,8 +57,6 @@ const Footer = () => {
       <p className='icons'>
         <AiFillInstagram style={{color: "#DD2A7B"}}/>
         <AiOutlineTwitter style={{color: "skyblue"}}/>
-        <FontAwesomeIcon icon="fa-brands fa-instagram" />
-        <FontAwesomeIcon icon="fa-brands fa-x-twitter" />
       </p>
     </div>
   )

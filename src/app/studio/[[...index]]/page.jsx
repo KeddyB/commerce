@@ -11,7 +11,12 @@
 
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../backend/sanity.config.js'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
 export default function StudioPage() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
   return <NextStudio config={config} />
 }
