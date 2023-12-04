@@ -18,5 +18,5 @@ export default function StudioPage() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  return <NextStudio config={config} />
+  return <p>Post: {router.query.slug}</p>
 }
