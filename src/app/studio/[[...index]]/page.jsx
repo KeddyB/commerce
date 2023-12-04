@@ -9,7 +9,6 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../backend/sanity.config.js'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
@@ -18,5 +17,7 @@ export default function StudioPage() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  return <p>Post: {router.query.slug}</p>
+  return(
+    <div>this is the studio page</div>
+  )
 }
