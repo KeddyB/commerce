@@ -7,7 +7,7 @@ export default async function ProductDetails() {
   return(
     <div>
       <div className="product-detail-container">
-        <div>
+        <div>this is the slug page
           <div className="image-container">
             <img src='' />
           </div>
@@ -18,7 +18,7 @@ export default async function ProductDetails() {
 
 }
 
-export const fetchProduct = async ({params: { slug }}) => {
+export const fetchProduct = async () => {
   const query = client.fetch(`*[_type == "product"]`)
 
   const bquery = client.fetch(`*[_type == "banner"]`)
