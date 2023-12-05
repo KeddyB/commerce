@@ -1,12 +1,10 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 import { urlFor } from '../lib/client'
 
 const Product = ({ product:{image, name, slug, price} }) => {
-  const router = useRouter()
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
