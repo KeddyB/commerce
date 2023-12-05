@@ -1,8 +1,11 @@
 import React from "react"
 import { client, urlFor } from "../../../../lib/client"
 
-export default async function ProductDetails() {
+export default async function ProductDetails({ params }) {
   const data = await fetchProduct()
+  const bData = await fetchBanner()
+
+  const slug = params.index
 
   return(
     <div>
@@ -10,19 +13,19 @@ export default async function ProductDetails() {
         <div>this is the slug page
           <div className="image-container">
             <img src='' />
-          </div>
+          </div>{slug}
         </div>
       </div>
     </div>
   )
-
 }
 
-export const fetchProduct = async () => {
-  const query = client.fetch(`*[_type == "product"]`)
+export const fetchProduct = async ({ params: {slug} }) => {
+  const query = client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`)
+  return query
+}
 
+export const fetchBanner = async () => {
   const bquery = client.fetch(`*[_type == "banner"]`)
-  return {props:{
-    query, bquery
-  }}
+  return bquery
 }
