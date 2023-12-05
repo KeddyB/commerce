@@ -8,14 +8,14 @@ export const fetchProduct = async ({ params:{ slug }}) => {
   return query
 }
 
-export const fetchProducts = async ({ params: { slug }}) => {
+export const fetchProducts = async () => {
   const productsQuery =  client.fetch('*[_type == "product"]')
   return productsQuery
 }
 
 export default async function ProductDetails() {
-  //const data = await fetchProduct()
-  // const bData = await fetchBanner()
+  const productData = await fetchProduct()
+  const productsData = await fetchProducts()
 
 
   return(
