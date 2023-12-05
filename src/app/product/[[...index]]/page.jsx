@@ -2,10 +2,9 @@ import React from "react"
 import { client, urlFor } from "../../../../lib/client"
 
 
-export const fetchProduct = async ({ params:{ slug }}) => {
-  const query = client.fetch(`*[_type == "product" && slug.current == '${slug}][0]`)
-  
-  return query
+export const fetchProduct = async ({ params:{ slug } }) => {
+  const product = client.fetch(`*[_type == "product" && slug.current == '${slug}][0]`)
+  return product
 }
 
 export const fetchProducts = async () => {
@@ -15,7 +14,7 @@ export const fetchProducts = async () => {
 
 export default async function ProductDetails() {
   const productData = await fetchProduct()
-  const productsData = await fetchProducts()
+  const product = await fetchProducts()
 
 
   return(
