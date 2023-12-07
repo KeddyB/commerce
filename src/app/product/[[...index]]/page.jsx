@@ -13,7 +13,6 @@ export const fetchProducts = async () => {
 }
 
 export default async function ProductDetails({ product, products }) {
-
   const { image, name, details, price} = product
   return(
     <div>

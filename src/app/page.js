@@ -1,7 +1,9 @@
 import React from 'react'
 import './globals.css'
 import { Product, FooterBanner, HeroBanner} from '../../components/index'
+import { groq } from 'next-sanity'
 import { client } from '../../lib/client'
+import Image from 'next/image'
 
 import Layout from './layout'
 
@@ -23,7 +25,6 @@ export const home = async () => {
           key={product._id} product={product}
         />)}
       </div>
-
       <FooterBanner footerBanner={bData && bData[0]} />
     </div>
   )
