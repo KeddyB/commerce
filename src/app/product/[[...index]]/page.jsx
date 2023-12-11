@@ -1,5 +1,6 @@
 import React from "react"
-import { client, urlFor } from "../../../../lib/client"
+import { client } from "../../../../lib/client"
+import { urlFor } from "../../../../lib/utils"
 import { GetStaticPaths } from "next"
 
 // export const getStaticPaths = async () => {

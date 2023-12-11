@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { urlFor } from '../lib/client'
+import { client } from '../lib/client'
+import { urlFor } from '../lib/utils'
 import Image from 'next/image'
 import imageAsset from '../headphone1.png'
 

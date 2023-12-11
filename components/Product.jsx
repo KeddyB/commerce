@@ -2,17 +2,16 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { urlFor } from '../lib/client'
+import { client } from '../lib/client'
+import { urlFor } from '../lib/utils'
 
 const Product = ({ product:{image, name, slug, price} }) => {
   return (
     <div>
-      <Link href={`/product/${slug.current}`}>
+      <Link href={`/product/${slug}`}>
         <div className='product-card'>
           <img 
-            src={image}
-            width={250}
-            height={250}
+            src={urlFor(image)}
             alt=""
             className='product-image'
           />
