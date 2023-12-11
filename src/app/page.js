@@ -4,40 +4,31 @@ import { Product, FooterBanner, HeroBanner} from '../../components/index'
 import { groq } from 'next-sanity'
 import { client } from '../../lib/client'
 import Image from 'next/image'
+import { fetchProduct, fetchBanner } from '../../lib/utils'
 
 import Layout from './layout'
 
 
 export const home = async () => {
-  const data = await fetchProduct()
-  const bData = await fetchBanner()
+  const products = await fetchProduct()
+  const banner = await fetchBanner()
   
   return (
     <div>
-      <HeroBanner heroBanner={bData.length && bData[0]} />
+      <HeroBanner heroBanner={banner.length && banner[0]} />
       
       <div className='products-heading'>
         <h2>Best selling products</h2>
         <p>speakers of many variation</p>
       </div>
       <div className='products-container'>
-        {data?.map((product) => <Product
-          key={product._id} product={product}
-        />)}
+        {products?.map((product) => 
+          <Product key={product._id} product={product} />
+        )}
       </div>
-      <FooterBanner footerBanner={bData && bData[0]} />
+      <FooterBanner footerBanner={banner && banner[0]} />
     </div>
   )
-}
-
-export const fetchProduct = async () => {
-  const query = client.fetch(`*[_type == "product"]`)
-  return query
-}
-
-export const fetchBanner = async () => {
-  const bquery = client.fetch(`*[_type == "banner"]`)
-  return bquery
 }
 
 export default home
