@@ -16,8 +16,8 @@ const HeroBanner = ({ heroBanner: { largeText1, smallText, midText, product, but
         alt={product}
         className='hero-banner-image'
         priority={false}
-        width={550}
-        height={350}
+        width={450}
+        height={300}
       />
       <div>
         <Link href={`/product/${product}`}>
