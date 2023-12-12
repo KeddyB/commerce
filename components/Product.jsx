@@ -2,15 +2,15 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { client } from '../lib/client'
-import { urlFor } from '../lib/utils'
+import { urlFor } from '../lib/sanity'
+import Image from 'next/image'
 
-const Product = ({ product:{image, name, slug, price} }) => {
+const Product = ({ product:{ image, name, slug, price} }) => {
   return (
     <div>
       <Link href={`/product/${slug}`}>
         <div className='product-card'>
-          <img 
+          <Image 
             src={urlFor(image)}
             alt=""
             height={350}

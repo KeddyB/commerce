@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { urlFor } from '../lib/utils'
+import { urlFor } from '../lib/sanity'
 import Image from 'next/image'
 
 import imageAsset from '../headphone1.png'
@@ -12,10 +12,12 @@ const HeroBanner = ({ heroBanner: { largeText1, smallText, midText, product, but
       <h3>{midText}</h3>
       <h1>{largeText1}</h1>
       <Image
-        src={imageAsset}
+        src={urlFor(image).url()}
         alt={product}
         className='hero-banner-image'
         priority={false}
+        width={550}
+        height={350}
       />
       <div>
         <Link href={`/product/${product}`}>

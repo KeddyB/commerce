@@ -1,10 +1,6 @@
 import React from 'react'
 import './globals.css'
 import { Product, FooterBanner, HeroBanner} from '../../components/index'
-import { groq } from 'next-sanity'
-import { client } from '../../lib/client'
-import { urlFor } from '../../lib/utils'
-import Image from 'next/image'
 import { fetchProduct, fetchBanner } from '../../lib/utils'
 
 import Layout from './layout'
@@ -26,6 +22,7 @@ export const home = async () => {
         {products?.map((product) => 
           <Product key={product._id} product={product} />
         )}
+
       </div>
       <FooterBanner footerBanner={banner && banner[0]} />
     </div>

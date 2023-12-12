@@ -1,5 +1,5 @@
 import React from "react"
-import { client } from "../../../../lib/client"
+import { client } from "../../../../lib/sanity"
 import { urlFor } from "../../../../lib/utils"
 import { fetchProduct } from "../../../../lib/utils"
 

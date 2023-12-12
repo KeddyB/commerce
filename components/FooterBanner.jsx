@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { client } from '../lib/client'
-import { urlFor } from '../lib/utils'
+import { client, urlFor } from '../lib/sanity'
 import Image from 'next/image'
 import imageAsset from '../headphone1.png'
 
@@ -24,7 +23,7 @@ const FooterBanner = ({ footerBanner: {discount, largeText1, largeText2, saleTim
             <button type='button'>{buttonText}</button>
           </Link>
         </div>
-        <Image src={imageAsset} alt="an image" width={450} height={300}/*{urlFor(image)}*/ className='footer-banner-image' />
+        <Image src={urlFor(image).url()} alt="an image" width={550} height={350} className='footer-banner-image' />
       </div>
     </div>
   )
