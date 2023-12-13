@@ -3,14 +3,13 @@ import React from 'react'
 import Link from 'next/link'
 
 import { urlFor } from '../lib/sanity'
-import Image from 'next/image'
 
 const Product = ({ product:{ image, name, slug, price} }) => {
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
         <div className='product-card'>
-          <Image 
+          <img 
             src={urlFor(image && image[0]).url()}
             alt={name}
             priority={false}

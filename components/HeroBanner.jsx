@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { urlFor } from '../lib/sanity'
 import Image from 'next/image'
 
-import imageAsset from '../headphone1.png'
 
 const HeroBanner = ({ heroBanner: { largeText1, smallText, midText, product, buttonText, image, desc} }) => {
   return (

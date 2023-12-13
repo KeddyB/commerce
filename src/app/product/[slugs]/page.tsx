@@ -16,14 +16,15 @@ export default async function ProductDetails({ params }: Props) {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <Image src={urlFor(slugs.image && slugs.image[0]).url()} width={400} height={400} alt="" />
+            <img
+              src={urlFor(slugs.image && slugs.image[0]).url()}
+              width={400}
+              height={400}
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
   )
 }
-
-// export const generateStaticParams = async () =>{
-//   // const products = await getProject(slug)
-// }
