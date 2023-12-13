@@ -23,17 +23,17 @@ export default async function ProductDetails({ params }: Props) {
               alt=""
             />
           </div>
-          {/* <div className="small-images-container">
+          <div className="small-images-container">
             {slugs.image?.map((item, i) =>(
               <img src={urlFor(item).url()}
                 width={100}
                 height={100}
                 alt=""
                 className=""
-                onMouseEnter=""
+                // onMouseEnter=""
               />
             ))}
-          </div> */}
+          </div>
         </div>
         <div className="product-detail-desc">
             <h1>{slugs.name}</h1>
