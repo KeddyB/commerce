@@ -9,42 +9,44 @@ const Footer = () => {
   let month = date.getMonth()+1;
   let year = date.getFullYear();
 
+  let theMonth = ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July','Aug','Sept', 'Oct', 'Nov', 'Dec']
+
   function Month(){
     if(month == 1){
-      return "Jan"
+      return theMonth[0]
     }
     else if(month == 2){
-      return "Feb"
+      return theMonth[1]
     }
     else if(month == 3){
-      return "Mar"
+      return theMonth[2]
     }
     else if(month == 4){
-      return "Apr"
+      return theMonth[3]
     }
     else if(month == 5){
-      return "May"
+      return theMonth[4]
     }
     else if(month == 6){
-      return "June"
+      return theMonth[5]
     }
     else if(month == 7){
-      return "July"
+      return theMonth[6]
     }
     else if(month == 8){
-      return "Aug"
+      return theMonth[7]
     }
     else if(month == 9){
-      return "Sept"
+      return theMonth[8]
     }
     else if(month == 10){
-      return "Oct"
+      return theMonth[9]
     }
     else if(month == 11){
-      return "Nov"
+      return theMonth[10]
     }
     else if(month == 12){
-      return "Dec"
+      return theMonth[11]
     }
   }
 
