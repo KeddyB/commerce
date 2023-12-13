@@ -55,9 +55,9 @@ export default async function ProductDetails({ params }: Props) {
             <div className="quantity">
               <h3>Quantity: </h3>
               <p className="quantity-desc">
-                <span className="minus" onClick=""><AiOutlineMinus /></span>
-                <span className="num" onClick="">0</span>
-                <span className="plus" onClick=""><AiOutlinePlus /></span>
+                <span className="minus"><AiOutlineMinus /></span>
+                <span className="num">0</span>
+                <span className="plus"><AiOutlinePlus /></span>
               </p>
             </div>
         </div>
