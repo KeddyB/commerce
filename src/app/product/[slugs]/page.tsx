@@ -1,6 +1,7 @@
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { getProject } from "../../../../lib/utils"
+import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 
 type Props = {
   params: { slugs: string }
@@ -22,6 +23,36 @@ export default async function ProductDetails({ params }: Props) {
               alt=""
             />
           </div>
+          {/* <div className="small-images-container">
+            {slugs.image?.map((item, i) =>(
+              <img src={urlFor(item).url()}
+                width={100}
+                height={100}
+                alt=""
+                className=""
+                onMouseEnter=""
+              />
+            ))}
+          </div> */}
+        </div>
+        <div className="product-detail-desc">
+            <h1>{slugs.name}</h1>
+            <div className="reviews">
+              <div>
+                <AiFillStar />
+                <AiFillStar />
+                <AiFillStar />
+                <AiFillStar />
+                <AiOutlineStar />
+              </div>
+              <p>
+                (20)
+              </p>
+            </div>
+            <h4>Details: </h4>
+            <p>{slugs.details}</p>
+            <p className="price">${slugs.price}</p>
+            
         </div>
       </div>
     </div>
