@@ -1,7 +1,6 @@
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { getProject } from "../../../../lib/utils"
-import Image from "next/image"
 
 type Props = {
   params: { slugs: string }
