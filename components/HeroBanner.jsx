@@ -15,7 +15,6 @@ const HeroBanner = ({ heroBanner: { largeText1, smallText, midText, product, but
         src={urlFor(image).url()}
         alt={product}
         className='hero-banner-image'
-        priority={false}
         width={450}
         height={300}
       />
