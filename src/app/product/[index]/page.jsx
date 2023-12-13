@@ -11,7 +11,6 @@ export default async function ProductDetails({ params }) {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            {index.name}
             {/* <img src={urlFor(image && image[0]).url()} /> */}
           </div>
         </div>
