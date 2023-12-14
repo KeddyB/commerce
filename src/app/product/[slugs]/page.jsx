@@ -4,22 +4,21 @@ import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
-// import { useState } from "react"
+
 import { groq } from "next-sanity"
+import Image from "next/image"
 
 export default async function ProductDetails({ params }) {
   const slug = params.slugs
   const slugs = await getProject(slug)
 
   const products = await fetchProduct()
-  // const [ index, setIndex ] = useState(0)
-
   return(
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
+            <Image
               src={urlFor(slugs.image && slugs.image[0]).url()}
               width={400}
               height={400}
@@ -36,7 +35,7 @@ export default async function ProductDetails({ params }) {
                   'small-image selected-image' :
                   'small-image'
                 }
-                // onMouseEnter={() => setIndex(i)}
+                onMouseEnter = {console.log(i)}
               />
             ))}
             
