@@ -1,4 +1,5 @@
-import React from "react"
+"use client"
+import React, { useState } from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
@@ -9,6 +10,7 @@ export default async function ProductDetails({ params }) {
   const slugs = await getProject(slug)
 
   const products = await fetchProduct()
+  const [ index, setIndex ] = useState(0)
 
   return(
     <div>
@@ -16,7 +18,7 @@ export default async function ProductDetails({ params }) {
         <div>
           <div className="image-container">
             <img
-              src={urlFor(slugs.image && slugs.image[0]).url()}
+              src={urlFor(slugs.image && slugs.image[index]).url()}
               width={400}
               height={400}
               alt=""
