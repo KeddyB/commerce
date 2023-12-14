@@ -1,15 +1,17 @@
+// "use client"
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
+// import { useState } from "react"
 
 export default async function ProductDetails({ params }) {
   const slug = params.slugs
   const slugs = await getProject(slug)
 
   const products = await fetchProduct()
-  //const [ index, setIndex ] = useState(0)
+  // const [ index, setIndex ] = useState(0)
 
   return(
     <div>
@@ -29,8 +31,11 @@ export default async function ProductDetails({ params }) {
                 width={100}
                 height={100}
                 alt=""
-                className=""
-                // onMouseEnter=""
+                className={i === 0 ?
+                  'small-image selected image' :
+                  'small-image'
+                }
+                //onMouseEnter={() => setIndex(i)}
               />
             ))}
             
