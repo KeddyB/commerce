@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import Link from 'next/link'
 
@@ -13,8 +12,8 @@ const Product = ({ product:{ image, name, slug, price} }) => {
             src={urlFor(image && image[0]).url()}
             alt={name}
             priority={false}
-            height={300}
-            width={300}
+            height={250}
+            width={250}
             className='product-image'
           />
           <p className="product-name">{name}</p>
