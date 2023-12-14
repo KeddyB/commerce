@@ -1,30 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 html,
 body, * {
   padding: 0;
@@ -92,9 +65,9 @@ width: 100%;
     margin-left: 6px;
 }
 .logo{
-  color: gray;
+  color: #324D67;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: bold;
 
 }
 .cart-icon{
@@ -196,8 +169,8 @@ width: 100%;
   position: absolute;
   top: 0%;
   right:20%;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
 }
 
 
@@ -239,7 +212,7 @@ text-align: end;
   font-weight: 200;
 }
 .footer-banner-container{
-  padding: 70px 40px;
+  padding: 100px 40px;
   background-color: #f02d34;
   border-radius: 15px;
   position: relative;
@@ -274,8 +247,10 @@ text-align: end;
 }
 .footer-banner-image{
   position: absolute;
-  top: -2%;
-  left: 27%;
+  /* top: -35%;
+  left: 8%; */
+  top: -25%;
+  left: 25%;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -649,7 +624,7 @@ margin-top: 160px;
     height: 560px;
   }
   .hero-banner-image{
-    width: 400px;
+    width: 77%;
     height: 62%;
     top: -2%;
     right: -6%;
@@ -659,10 +634,10 @@ margin-top: 160px;
     margin-top: 80px;
   }
   .footer-banner-image{
-    width: 400px;
-    left: 50%;
+    width: 77%;
+    left: 30%;
     top: 6%;
-    height: 62%
+    height: 56%
   }
   .banner-desc .left h3{
     font-weight: 900;
