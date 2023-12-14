@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
