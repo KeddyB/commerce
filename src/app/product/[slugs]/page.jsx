@@ -1,17 +1,18 @@
-"use client"
+// "use client"
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
-import { useState } from "react"
+// import { useState } from "react"
+import { groq } from "next-sanity"
 
 export default async function ProductDetails({ params }) {
   const slug = params.slugs
   const slugs = await getProject(slug)
 
   const products = await fetchProduct()
-  
+  // const [ index, setIndex ] = useState(0)
 
   return(
     <div>
@@ -35,7 +36,7 @@ export default async function ProductDetails({ params }) {
                   'small-image selected-image' :
                   'small-image'
                 }
-                //onMouseEnter={() => setIndex(i)}
+                // onMouseEnter={() => setIndex(i)}
               />
             ))}
             
