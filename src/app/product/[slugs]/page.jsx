@@ -4,7 +4,9 @@ import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+
+import { groq } from "next-sanity"
 import Image from "next/image"
 
 export default async function ProductDetails({ params }) {
