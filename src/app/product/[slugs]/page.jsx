@@ -4,18 +4,18 @@ import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
-import { useState } from "react"
 
 import { groq } from "next-sanity"
 import Image from "next/image"
 
 export default async function ProductDetails({ params }) {
-  "use client"
-  const [index, setIndex] = useState(0)
   const slug = params.slugs
   const slugs = await getProject(slug)
   const products = await fetchProduct()
-  
+  let index = 0
+  function setIndex(a){
+    index = a
+  }
   return(
     <div>
       <div className="product-detail-container">
