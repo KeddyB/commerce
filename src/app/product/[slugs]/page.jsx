@@ -5,6 +5,7 @@ import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
 
+import { groq } from "next-sanity"
 import Image from "next/image"
 
 export default async function ProductDetails({ params }) {
@@ -12,7 +13,7 @@ export default async function ProductDetails({ params }) {
   const slugs = await getProject(slug)
 
   const products = await fetchProduct()
-
+  
   return(
     <div>
       <div className="product-detail-container">
