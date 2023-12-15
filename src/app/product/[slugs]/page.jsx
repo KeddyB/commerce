@@ -15,7 +15,6 @@ export default async function ProductDetails({ params }) {
   const slug = params.slugs
   const slugs = await getProject(slug)
   const products = await fetchProduct()
-
   
   return(
     <div>
@@ -38,7 +37,6 @@ export default async function ProductDetails({ params }) {
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter = {() => {
                   setIndex(i);
-                  console.log(i)
                 }
               }
               />
