@@ -1,15 +1,13 @@
+"use client"
 import '../app/globals.css'
 import Head from 'next/head'
 
 import { Navbar, Footer } from '../../components'
-
-export const metadata = {
-  title: 'Keddy Shop',
-  description: 'The Store',
-}
+import { StateContext } from '../../context/StateContext'
 
 export default function Layout({ children }) {
  return (
+  <StateContext>
     <html lang="en">
       <body>
         <div className='layout'>
@@ -26,5 +24,6 @@ export default function Layout({ children }) {
         </div>
       </body>
     </html>
+  </StateContext>
   )
 }
