@@ -1,0 +1,27 @@
+import React, { createContext, useContext, useState, useEffect } from 'react'
+import { toast } from 'react-hot-toast'
+
+const Context = createContext()
+
+export const StateContext = ({children}) =>{
+    const [showCart, setShowCart] = useState(false)
+    const [cartItems, setItems] = useState()
+    const [totalPrice, setTotalPrice] = useState()
+    const [totalQuantity, setTotalQuantity] = useState()
+    const [qty, setQty] = useState(1)
+    
+
+    return(
+        <Context.Provider
+            value={{
+                showCart,
+                cartItems,
+                totalPrice,
+                totalQuantity,
+                qty
+            }}
+        >
+            {children}
+        </Context.Provider>
+    )
+}
