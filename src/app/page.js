@@ -13,7 +13,6 @@ export const home = async () => {
     <StateContext>
       <div>
         <HeroBanner heroBanner={banner.length && banner[0]} />
-      
         <div className='products-heading'>
           <h2>Best selling products</h2>
           <p>speakers of many variation</p>
