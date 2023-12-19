@@ -27,10 +27,14 @@ export const StateContext = ({children}) =>{
                 cartItems,
                 totalPrice,
                 totalQuantity,
-                qty
+                qty,
+                incQty,
+                decQty
             }}
         >
             {children}
         </Context.Provider>
     )
 }
+
+export const useStateContext = () => useContext(Context)

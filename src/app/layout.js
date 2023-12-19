@@ -8,24 +8,27 @@ import { Navbar, Footer } from '../../components'
 
 export default function Layout({ children }) {
  return (
-  <StateContext>
-    <Toaster />
-    <html lang="en">
-      <body>
-        <div className='layout'>
-          <Head>
-            <title>Keddy Store</title>
-          </Head>
-          <header>
-            <Navbar />
-          </header>
-          <main className='main-container'>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
-      </body>
-    </html>
-  </StateContext>
+  <html lang="en">
+    <body>
+      <div className='layout'>
+        <Head>
+          <title>Keddy Store</title>
+        </Head>
+        <header>
+          <Navbar />
+        </header>
+        <main className='main-container'>
+          <StateContext>
+            <Toaster />
+            {children}
+          </StateContext>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </body>
+  </html>
+  
   )
 }
