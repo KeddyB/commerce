@@ -1,9 +1,10 @@
 "use client"
 import '../app/globals.css'
 import Head from 'next/head'
+import { StateContext } from '../../context/StateContext'
+import { Toaster } from 'react-hot-toast'
 
 import { Navbar, Footer } from '../../components'
-import { StateContext } from '../../context/StateContext'
 
 export default function Layout({ children }) {
  return (
