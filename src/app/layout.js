@@ -9,6 +9,7 @@ import { Navbar, Footer } from '../../components'
 export default function Layout({ children }) {
  return (
   <StateContext>
+    <Toaster />
     <html lang="en">
       <body>
         <div className='layout'>

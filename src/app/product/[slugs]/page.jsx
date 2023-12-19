@@ -14,7 +14,7 @@ export default async function ProductDetails({ params }) {
   const products = await fetchProduct()
   let index = 0
   function setIndex(a){
-    index = a
+    return index = a
   }
   return(
     <div>
