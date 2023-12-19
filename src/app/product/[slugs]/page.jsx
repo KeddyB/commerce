@@ -1,17 +1,14 @@
-"use client"
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
 
-import { useStateContext } from '../../../../context/StateContext'
-
 export default async function ProductDetails({ params }) {
   const slug = params.slugs
   const slugs = await getProject(slug)
   const products = await fetchProduct()
-  const { decQty, incQty, qty} = useStateContext()
+  //const { decQty, incQty, qty} = useStateContext()
   let index = 0
   function setIndex(a){
     return index = a
@@ -35,10 +32,9 @@ export default async function ProductDetails({ params }) {
                 height={100}
                 alt=""
                 className={i === index ? 'small-image selected-image' : 'small-image'}
-                onMouseEnter = {() => {
-                  setIndex(i);
-                }
-              }
+                // onMouseEnter = {() => {
+                //   setIndex(i);
+                // }}
               />
             ))}
             
@@ -64,9 +60,11 @@ export default async function ProductDetails({ params }) {
             <div className="quantity">
               <h3>Quantity: </h3>
               <p className="quantity-desc">
-                <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
-                <span className="num">{qty}</span>
-                <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
+                <span className="minus" /*onClick={decQty}*/><AiOutlineMinus /></span>
+                <span className="num">
+                  {/* {qty} */}0
+                </span>
+                <span className="plus" /*onClick={incQty}*/><AiOutlinePlus /></span>
               </p>
             </div>
             <div className="buttons">
