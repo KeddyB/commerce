@@ -1,13 +1,26 @@
+"use client"
 import React from "react"
 import { urlFor, client } from "../../../../lib/sanity"
 import { fetchProduct, getProject } from "../../../../lib/utils"
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { Product } from "../../../../components"
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
-export default async function ProductDetails({ params }) {
+export default function ProductDetails({ params }) {
+  const queryClient = new QueryClient();
+  const { isLoading, error, slugs } = useQuery("slugs", async (slug) => {
+    return client.fetch(`*[_type == "product" && slug.current == '${slug}'][0]`, {slug});
+  });
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if (error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
   const slug = params.slugs
-  const slugs = await getProject(slug)
-  const products = await fetchProduct()
+  // const slugs = await getProject(slug)
+  // const products = await fetchProduct()
   //const { decQty, incQty, qty} = useStateContext()
   let index = 0
   function setIndex(a){
