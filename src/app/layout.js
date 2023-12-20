@@ -29,6 +29,5 @@ export default function Layout({ children }) {
       </div>
     </body>
   </html>
-  
   )
 }
