@@ -22,6 +22,7 @@ export default async function ProductDetails({ params }) {
               src={urlFor(slugs.image && slugs.image[index]).url()}
               width={400}
               height={400}
+              key={slug._id}
               alt=""
             />
           </div>
